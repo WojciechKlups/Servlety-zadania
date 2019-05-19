@@ -19,6 +19,7 @@ public class SessionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession();
+        session.setMaxInactiveInterval(5); //ustawianie czasu trwania sesji
 
         String firstName = request.getParameter("firstname");
         String lastName = request.getParameter("lastname");
